@@ -1,0 +1,27 @@
+*************************************************************
+HOW TO COMPILE AND USE THE NEW SOLVER---twoPhaseEulerSedFoam
+*************************************************************
+
+(1) This solver is modified based on the twoPhaseEulerFoam solver in OpenFOAM-2.1.0, and it is only tested and validated in OpenFOAM-2.1.0, so the performance under other OpenFOAM versions is not guaranteed. It is suggested that OpenFOAM-2.1.0 is installed successfully before this solver is compiled. 
+
+(2) In this uncompressed folder, the following files can be found:
+
+/Example    /twoPhaseEulerSedFoam
+License     README User_Manual.pdf
+
+(3) The source code for the new solver twoPhaseEulerSedFoam is under the folder of twoPhaseEulerSedFoam. In order to compile the new solver, copy the folder twoPhaseEulerSedFoam to the directory: $FOAM_APP/solver/multiphase/
+
+(4) Go to the directory: $FOAM_APP/solver/multiphase/twoPhaseEulerSedFoam, then type the following:
+
+./Allwmake
+
+Then the code will start to compile, and the command generated for this solver is twoPhaseEulerSedFoam 
+
+(5) Example files are included under the folder of /Example in the uncompressed files.
+
+(6) The model formulations and a summary of the major modifications are discussed in detail in the User_Manual.pdf
+
+(7) If you have any further questions about this solver, please feel free to contact:
+Zhen Cheng (zcheng@udel.edu) or Dr. Tian-Jian Hsu (thsu@udel.edu)
+
+Ocean Engineering Lab, University of Delaware, 259 Academy St. Newark, DE, 19711
