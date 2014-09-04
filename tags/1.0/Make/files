@@ -1,3 +1,0 @@
-twoPhaseEulerSedFoam.C
-
-EXE = $(FOAM_APPBIN)/twoPhaseEulerSedFoam

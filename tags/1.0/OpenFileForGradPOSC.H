@@ -1,5 +1,0 @@
-  OFstream gradPOSCFile
-  (
-    "gradPOSC.txt"
-  );
-
