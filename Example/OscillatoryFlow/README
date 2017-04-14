@@ -1,0 +1,19 @@
+************************************************
+Instructions:
+************************************************
+
+This is an example case for 1DV and 2DV validation of sinusoidal (T=5 sec) flow condition with medium sand in O'Donoghue and Wright (2004)
+
+1. The flow condition (pressure gradient) and sediment properties are descirbed in constant/transportProperties.
+
+2. Parameters and coefficients associated with kinetic theory and frictional stress model are defined in constant/kineticTheoryProperties
+
+3. Numerical Schemes (temporal and spatial schemes) are described in system/fvSchemes
+
+4. The flow is driven to about 5 periods to reach the quasi-steady state, and our numerical data are collected in data/OD2004_num.mat, which is a MATLAB file.
+
+************************************************
+Reference:
+************************************************
+
+O'Donoghue, T., Wright, S., 2004. Concentrations in oscillatory sheet flow for well sorted and graded sands. Coastal Engineering 50 (2004) 117-138.

@@ -1,0 +1,19 @@
+************************************************
+Instructions:
+************************************************
+
+This is an example case for 1DV validation of sand transport under steady channel flow condition with shileds parameter = 1.10 in Sumer et al. (1996)
+
+1. The flow condition (pressure gradient) and sediment properties are descirbed in constant/transportProperties.
+
+2. Parameters and coefficients associated with kinetic theory and frictional stress model are defined in constant/kineticTheoryProperties
+
+3. Numerical Schemes (temporal and spatial schemes) are described in system/fvSchemes
+
+4. The steady pressure gradient has been drving the flow to about 30 sec to reach the steady state, and our numerical data are collected in data/Sumer1996_num.mat, which is a MATLAB file.
+
+************************************************
+Reference:
+************************************************
+
+Sumer, B. M., Kozakiewicz, A., Fredsoe, J., Deigaard, R., 1996. Velocity and concentration profiles in sheet-flow layer of movable bed. Journal of Hydraulic Engineering, (1996) 549-558.
