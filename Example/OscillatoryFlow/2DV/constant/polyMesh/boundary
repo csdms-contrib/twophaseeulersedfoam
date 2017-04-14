@@ -1,0 +1,104 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+11
+(
+    inandouthalf11
+    {
+        type            cyclic;
+        nFaces          100;
+        startFace       143440;
+        matchTolerance  0.0001;
+        neighbourPatch  inandouthalf12;
+    }
+    inandouthalf12
+    {
+        type            cyclic;
+        nFaces          100;
+        startFace       143540;
+        matchTolerance  0.0001;
+        neighbourPatch  inandouthalf11;
+    }
+    inandouthalf21
+    {
+        type            cyclic;
+        nFaces          100;
+        startFace       143640;
+        matchTolerance  0.0001;
+        neighbourPatch  inandouthalf22;
+    }
+    inandouthalf22
+    {
+        type            cyclic;
+        nFaces          100;
+        startFace       143740;
+        matchTolerance  0.0001;
+        neighbourPatch  inandouthalf21;
+    }
+    inandouthalf31
+    {
+        type            cyclic;
+        nFaces          110;
+        startFace       143840;
+        matchTolerance  0.0001;
+        neighbourPatch  inandouthalf32;
+    }
+    inandouthalf32
+    {
+        type            cyclic;
+        nFaces          110;
+        startFace       143950;
+        matchTolerance  0.0001;
+        neighbourPatch  inandouthalf31;
+    }
+    inandouthalf41
+    {
+        type            cyclic;
+        nFaces          50;
+        startFace       144060;
+        matchTolerance  0.0001;
+        neighbourPatch  inandouthalf42;
+    }
+    inandouthalf42
+    {
+        type            cyclic;
+        nFaces          50;
+        startFace       144110;
+        matchTolerance  0.0001;
+        neighbourPatch  inandouthalf41;
+    }
+    top
+    {
+        type            symmetryPlane;
+        nFaces          200;
+        startFace       144160;
+    }
+    walls
+    {
+        type            wall;
+        nFaces          200;
+        startFace       144360;
+    }
+    frontAndBackPlanes
+    {
+        type            empty;
+        nFaces          144000;
+        startFace       144560;
+    }
+)
+
+// ************************************************************************* //

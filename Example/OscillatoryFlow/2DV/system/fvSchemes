@@ -1,0 +1,85 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.7.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSchemes;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+ddtSchemes
+{
+     default         CrankNicholson 0.5;//backward;
+}
+
+gradSchemes
+{
+     default         Gauss linear;
+//     grad(alpha) cellMDLimited Gauss linear 1;
+//     grad((1-alpha)) cellMDLimited Gauss linear 1;
+//     grad(pa)  cellMDLimited Gauss linear 1;
+//     grad(pf) leastSquares;
+}
+
+divSchemes
+{
+    default         none;
+    div(phia,Ua)    Gauss limitedLinearV 1;
+    div(phib,Ub)    Gauss limitedLinearV 1;
+    div(phiRa,Ua)    Gauss limitedLinearV 1;
+    div(phiRb,Ub)    Gauss limitedLinearV 1;
+    div(phib,k)     Gauss limitedLinear 1;
+    div(phib,epsilon) Gauss limitedLinear 1;
+    div(phi,Theta)  Gauss limitedLinear 1;
+    div(Rca)        Gauss linear;
+    div(Rcb)        Gauss linear;
+    div(Rcba)        Gauss linear;
+    div(phib,beta)  Gauss limitedLinear01 1;
+    div(phi,alpha)  Gauss limitedLinear01 1;
+    div(phir,alpha) Gauss limitedLinear01 1;
+    div((((rho*nuEffb)|rho)*dev(grad(Ub).T()))) Gauss linear;
+    div((nuEffb*dev(grad(Ub).T()))) Gauss linear;
+    div((nuEffa*dev(grad(Ua).T()))) Gauss linear;
+    div((nuEffa*grad(Ua).T())) Gauss linear;
+}
+
+laplacianSchemes
+{
+    default         Gauss linear corrected;
+    laplacian(nuEffa,Ua) Gauss linear corrected;
+    laplacian(nuEffb,Ub) Gauss linear corrected;
+    laplacian((rho*(1|A(U))),p) Gauss linear corrected;
+    laplacian(alphaPpMag,alpha) Gauss linear corrected;
+    laplacian(Galphaf,alpha) Gauss linear corrected;
+    laplacian(DkEff,k) Gauss linear corrected;
+    laplacian(DkEff,beta) Gauss linear corrected;
+    laplacian(DepsilonEff,epsilon) Gauss linear corrected;
+    laplacian(DepsilonEff,beta) Gauss linear corrected;
+    laplacian(kappa,Theta) Gauss linear corrected;
+}
+
+interpolationSchemes
+{
+    default  linear;
+}
+
+snGradSchemes
+{
+    default         corrected;
+}
+
+fluxRequired
+{
+    default         no;
+    p               ;
+}
+
+// ************************************************************************* //
